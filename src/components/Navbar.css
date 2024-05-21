@@ -1,0 +1,10 @@
+.ml-auto {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+input {
+    padding: 4px 6px;
+    border-radius: 8px;
+}

@@ -1,0 +1,78 @@
+.chapter-list {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .chapter-list h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .chapters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .chapter-card {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px 20px;
+    min-width: 280px;
+    max-width: 300px;
+  }
+  
+  .chapter-number {
+    background-color: #ffc107;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 15px;
+  }
+  
+  .chapter-info {
+    text-align: left;
+  }
+  
+  .chapter-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .chapter-name-arabic {
+    font-size: 18px;
+    color: #00b894;
+  }
+  
+  .chapter-details {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .chapter-details span {
+    margin-right: 10px;
+  }
+  
+  .chapter-revelation::before {
+    content: "🕋"; /* Placeholder for the Meccan/Medinan icon */
+    margin-right: 5px;
+  }
+  
+  .chapter-verses::before {
+    content: "📖"; /* Placeholder for the verses count icon */
+    margin-right: 5px;
+  }
+  
