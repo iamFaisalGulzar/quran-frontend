@@ -7,7 +7,6 @@ const Chapter = ({ token }) => {
 
   return (
     <div>
-      <h1>Chapter {chapterId}</h1>
       <VersesList chapterId={chapterId} token={token} />
     </div>
   );

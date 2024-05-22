@@ -1,7 +1,21 @@
 .ml-auto {
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: end;
+    width: 100%;
+}
+
+.input-field {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+.navbar-text {
+    margin-right: 10px;
+    color: white;
 }
 
 input {

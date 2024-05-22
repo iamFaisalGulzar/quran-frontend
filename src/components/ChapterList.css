@@ -1,6 +1,6 @@
 .chapter-list {
     text-align: center;
-    padding: 20px;
+    padding: 0px 20px;
   }
   
   .chapter-list h1 {
@@ -13,6 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 8px;
   }
   
   .chapter-card {
@@ -74,5 +75,48 @@
   .chapter-verses::before {
     content: "📖"; /* Placeholder for the verses count icon */
     margin-right: 5px;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   

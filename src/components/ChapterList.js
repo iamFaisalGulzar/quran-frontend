@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { getChapters } from '../services/api';
 import { useNavigate } from 'react-router-dom';
 import './ChapterList.css'; // Ensure you have this CSS file for styling
+import { Spinner } from 'react-bootstrap';
+import imageUrl from './headerImage.png'
 
 const ChapterList = ({ token }) => {
   const [chapters, setChapters] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,6 +17,7 @@ const ChapterList = ({ token }) => {
     };
 
     fetchChapters();
+    setIsLoading(false);
   }, [token]);
 
   const handleCardClick = (chapterId) => {
@@ -21,8 +25,16 @@ const ChapterList = ({ token }) => {
   };
 
   return (
+    isLoading ? <div className="w-100 d-flex justify-content-center card-spinner-container">
+    <Spinner animation="border" variant="primary" />
+  </div> :
     <div className="chapter-list">
-      <h1>Let's begin the journey towards Enlightenment</h1>
+      <div className="container">
+        <img src={imageUrl} alt="Snow" style={{ width: '100%' }} />
+        <div className="centered">
+        <h1>Let's begin the journey towards Enlightenment</h1>
+        </div>
+      </div>
       <div className="chapters-container">
         {chapters.map((chapter) => (
           <div key={chapter.id} className="chapter-card" onClick={() => handleCardClick(chapter.id)}>

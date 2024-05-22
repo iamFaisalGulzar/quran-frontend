@@ -8,6 +8,7 @@ import "./Navbar.css"
 const Navbar = ({ onLogin, onLogout, isLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -16,15 +17,17 @@ const Navbar = ({ onLogin, onLogout, isLoggedIn }) => {
       password
     });
     if (response.status === 200) {
+      console.log({response})
       const token = response.data?.data?.accessToken;
       onLogin(token);
+      setUsername(response.data?.data?.user.fullName);
     } else {
       console.log('User not exist');
     }
   };
 
   return (
-    <BootstrapNavbar bg="dark" variant="dark" expand="lg">
+    <BootstrapNavbar bg="dark" variant="dark" style={{ padding: '10px' }} expand="lg">
       <BootstrapNavbar.Brand href="/">Quran App</BootstrapNavbar.Brand>
       <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
       <BootstrapNavbar.Collapse id="basic-navbar-nav">
@@ -37,21 +40,21 @@ const Navbar = ({ onLogin, onLogout, isLoggedIn }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 placeholder="Enter email"
-                className="mr-2"
+                className="mr-2 input-field"
               />
               <input
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 placeholder="Enter password"
-                className="mr-2"
+                className="mr-2 input-field"
               />
-              <Button variant="primary" onClick={handleLogin} className="mr-2">Login</Button>
-              <Button variant="success" onClick={() => navigate('/register')}>Register</Button>
+              <Button variant="primary" onClick={handleLogin} className="mr-2 btn">Login</Button>
+              <Button variant="success" onClick={() => navigate('/register')} className='btn'>Register</Button>
             </>
           ) : (
             <>
-              <span className="navbar-text mr-3">Welcome, User!</span>
+              <span className="navbar-text mr-3">Welcome, {username}!</span>
               <Button variant="danger" onClick={onLogout}>Logout</Button>
             </>
           )}
